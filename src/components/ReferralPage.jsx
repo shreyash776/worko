@@ -19,13 +19,13 @@ const ReferralPage = () => {
 
   const fetchCompanies = async () => {
     try {
-      let url = 'http://localhost:3000/api/companies';
+      let url = 'https://worko-backend-2.onrender.com/api/companies';
       if (searchTerm) {
-        url = `http://localhost:3000/api/companies/search?name=${encodeURIComponent(searchTerm)}`;
+        url = `https://worko-backend-2.onrender.com/api/companies/search?name=${encodeURIComponent(searchTerm)}`;
       }
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error('Failed to fetch companies');
+        throw new Error('Failed to fetch companies')
       }
       const data = await response.json();
       setCompanies(data);
